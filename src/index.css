@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+header {
+    background-image: url("/src/images/bg-pattern-intro-mobile.svg"), linear-gradient(to bottom right, hsl(13, 100%, 72%), hsl(353, 100%, 62%));
+    background-origin: border-box;
+    background-position: 35% 36%, center;
+    background-repeat: no-repeat;
+    background-size: auto, 100%;
+}
+
+@media (min-width: 768px) {
+    header {
+        background-image: url("/src/images/bg-pattern-intro-desktop.svg"), linear-gradient(to right, hsl(13, 100%, 72%), hsl(353, 100%, 62%));
+        background-position: 30% 50%, center;
+        background-size: auto, 100%;
+    }
+}
