@@ -16,7 +16,7 @@ export default {
             },
             backgroundImage: {
                 'introBgMobile': 'url("/src/images/bg-pattern-intro-mobile.svg"),linear-gradient(to bottom right, hsl(13, 100%, 72%), hsl(353, 100%, 62%))',
-                'bodyBg': 'linear-gradient(to bottom right, hsl(237, 17%, 21%), hsl(237, 23%, 32%))',
+                'bodyBg': 'url("/src/images/bg-pattern-circles.svg"), linear-gradient(to bottom right, hsl(237, 17%, 21%), hsl(237, 23%, 32%))',
                 'editorBg': 'url("/src/images/illustration-editor-desktop.svg")',
             },
             fontFamily: {
@@ -25,7 +25,11 @@ export default {
             },
             gridTemplateColumns: {
                 'editorCols': "minmax(1rem,1fr) minmax(0,720px) minmax(0,720px) minmax(1rem,1fr)",
-            }
+                'infraColsDesktop': "minmax(1rem, 1fr) repeat(2, minmax(1rem, 1fr))",
+            },
+            gridTemplateRows: {
+                'infraRows': "minmax(1rem, 190px) repeat(2, minmax(1rem, 330px))",
+            },
         },
     },
     plugins: [],

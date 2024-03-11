@@ -10,10 +10,84 @@ header {
     background-size: auto, 100%;
 }
 
+/* INFRASTRUCTURE SECTION */
+
+#infrastructure-section {
+    display: grid;
+    grid-template-rows: minmax(0, 190px) repeat(2, minmax(0, 330px));
+    /* centers the phones image */
+    justify-items: center;
+    margin-bottom: 3rem;
+}
+
+#infrastructure-section>img {
+    max-height: 550px;
+    position: absolute;
+    grid-row: 1 / 3;
+}
+
+#infraBg {
+    width: 1fr;
+    height: 1fr;
+    position: absolute;
+    grid-row: 2 / 4;
+}
+
+#infrastructure-content {
+    position: relative;
+    overflow: hidden;
+    padding-inline: 2.5rem;
+    padding-bottom: 8rem;
+    background-image: linear-gradient(to bottom right, hsl(237, 17%, 21%), hsl(237, 23%, 32%));
+    z-index: -1;
+    grid-row: 2 / 4;
+    border-top-right-radius: 110px;
+    border-bottom-left-radius: 110px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+
 @media (min-width: 768px) {
     header {
         background-image: url("/src/images/bg-pattern-intro-desktop.svg"), linear-gradient(to right, hsl(13, 100%, 72%), hsl(353, 100%, 62%));
         background-position: 30% 50%, center;
         background-size: auto, 100%;
+    }
+
+}
+
+@media (min-width: 1024px) {
+    #infrastructure-section {
+        grid-template-rows: minmax(0, 90px) minmax(1rem, 400px) minmax(0, 90px);
+        grid-template-columns: 1fr minmax(0, 720px) minmax(0, 720px) 1fr;
+        justify-items: stretch;
+    }
+
+    #infrastructure-section>img {
+        position: relative;
+        justify-self: center;
+        align-self: center;
+        top: 1.25rem;
+        grid-row: 1 / 4;
+        grid-column: 2 / 3;
+    }
+
+    #infrastructure-content {
+        padding-bottom: 0;
+        grid-row: 2 / 3;
+        grid-column: 1 / -1;
+
+        /* create a subgrid to align text on desktops */
+        display: grid;
+        justify-content: center;
+        align-content: center;
+        grid-template-columns: minmax(0, 720px) minmax(0, 720px);
+    }
+
+    #infra-text {
+        /* align the text content on the right using a grid */
+        grid-column: 2 / 3;
     }
 }
