@@ -1,9 +1,15 @@
+import { useState } from "react";
+import MobileMenu from "./MobileMenu";
 import Navigation from "./Navigation";
 
 export default function Header() {
+    const [open, setOpen] = useState(false);
+
     return (
         <header className="px-6 min-h-[600px] rounded-bl-[110px] md:min-h-[700px]">
-            <Navigation />
+            <Navigation open={open} setOpen={setOpen} />
+
+            <MobileMenu open={open} />
 
             <section className="font-overpass text-white text-center">
                 <h1 className="font-medium text-4xl mb-5 md:text-5xl lg:text-7xl">A modern publishing platform</h1>

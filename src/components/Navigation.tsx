@@ -2,10 +2,23 @@
 import logo from '../images/logo.svg'
 import menuIcon from '../images/icon-hamburger.svg'
 import arrowIconLight from '../images/icon-arrow-light.svg'
+import React from 'react';
 
-export default function Navigation() {
+
+type NavigationProps = {
+    open: boolean,
+    setOpen: React.Dispatch<React.SetStateAction<boolean>>,
+};
+
+export default function Navigation({ open, setOpen }: NavigationProps) {
+
+    const handleMobileMenu = (e: React.MouseEvent<HTMLButtonElement>) => {
+        e.stopPropagation();
+        setOpen(!open);
+    };
+
     return (
-        <nav className="max-w-[1440px] mx-auto flex justify-between items-center py-10 mb-16 md:mb-20">
+        <nav className="max-w-[1440px] relative mx-auto flex justify-between items-center py-10 mb-16 md:mb-20">
 
             <ul className='flex justify-between items-center font-ubuntu text-white/80 '>
                 <li className='pr-10'>
@@ -88,7 +101,7 @@ export default function Navigation() {
                 </li>
             </ul>
 
-            <button className='md:hidden'>
+            <button onClick={handleMobileMenu} className='md:hidden'>
                 <img src={menuIcon} alt='menu icon' />
             </button>
         </nav>

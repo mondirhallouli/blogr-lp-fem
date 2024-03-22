@@ -30,6 +30,9 @@ export default {
             gridTemplateRows: {
                 'infraRows': "minmax(1rem, 190px) repeat(2, minmax(1rem, 330px))",
             },
+            width: {
+                'menu-width': 'calc(100% - 48px)'
+            }
         },
     },
     plugins: [],
